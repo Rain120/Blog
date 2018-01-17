@@ -418,7 +418,7 @@ function extend() {
 
 ```js
 var a = extend(true, [4, 5, 6, 7, 8, 9], [1, 2, 3]);
-console.log(a) // ???
+console.log(a) // [1, 2, 3, 7, 8, 9]
 ```
 
 ```js
@@ -433,8 +433,8 @@ var obj2 = {
 
 }
 
-var b = extend(true, obj1, obj2) // ???
-var c = extend(true, obj2, obj1) // ???
+var b = extend(true, obj1, obj2) // [5, 6, 7]
+var c = extend(true, obj2, obj1) // [5, 6, 7]
 ```
 
 ## 专题系列
