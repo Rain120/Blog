@@ -177,8 +177,9 @@ function Person() {
 console.log(Person.__proto__ === Person.prototype); // false
 console.log(Person.__proto__.__proto__ === Person.prototype.__proto__); // true
 ```
-因为Person._proto_ === Function.prototype,Function._proto_ === Object.prototype,
-而Person.prototype._proro_ === Object.prototype
+因为Person.\_\_proto\_\_ === Function.prototype,Function.\_\_proto\_\_ === Object.prototype
+
+而Person.prototype.\_\_proto\_\_ === Object.prototype
 
 
 ![完整原型图](https://pic3.zhimg.com/v2-729132ba66e171a1e23f84d387a73583_r.jpg)
@@ -208,6 +209,13 @@ person.constructor === Person.prototype.constructor
 ### \_\_proto\_\_
 
 其次是 \_\_proto\_\_ ，绝大部分浏览器都支持这个非标准的方法访问原型，然而它并不存在于 Person.prototype 中，实际上，它是来自于 Object.prototype ，与其说是一个属性，不如说是一个 getter/setter，当使用 obj.\_\_proto\_\_ 时，可以理解成返回了 Object.getPrototypeOf(obj)。
+
+
+### 补上prototype与\_\_proto\_\_
+prototype(显示原型)是构造函数访问原型对象，\_\_proto\_\_(隐式原型)是对象实例访问原型对象
+#### 二者的关系
+ instance.constructor.prototype = instance.\_\_proto\_\_
+
 
 ### 真的是继承吗？
 
