@@ -177,7 +177,8 @@ function Person() {
 console.log(Person.__proto__ === Person.prototype); // false
 console.log(Person.__proto__.__proto__ === Person.prototype.__proto__); // true
 ```
-因为Person._proto_ === Function.prototype,Function._proto_ === Object.prototype,而Person.prototype._proro_ === Object.prototype
+因为Person._proto_ === Function.prototype,Function._proto_ === Object.prototype,
+而Person.prototype._proro_ === Object.prototype
 
 
 ![完整原型图](https://pic3.zhimg.com/v2-729132ba66e171a1e23f84d387a73583_r.jpg)
