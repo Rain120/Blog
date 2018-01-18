@@ -202,6 +202,10 @@ person2.getName();
 2. 然后将对象的原型指向 Person.prototype
 3. 然后 Person.apply(obj)
 4. 返回这个对象
+或者这样理解：
+1. 创建一个空对象，用this变量引用它，该对象继承这个函数所有的原型
+2. 属性和方法都加入到this的引用对象中
+3. 新创建的对象都用this引用,最后隐式返回this
 
 注意这个时候，回顾下 apply 的实现步骤，会执行 obj.Person 方法，这个时候就会执行 if 语句里的内容，注意构造函数的 prototype 属性指向了实例的原型，使用字面量方式直接覆盖 Person.prototype，并不会更改实例的原型的值，person1 依然是指向了以前的原型，而不是 Person.prototype。而之前的原型是没有 getName 方法的，所以就报错了！
 
