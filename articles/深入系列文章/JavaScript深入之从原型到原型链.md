@@ -171,6 +171,14 @@ console.log(Object.prototype.__proto__ === null) // true
 ![原型链示意图](https://github.com/mqyqingfeng/Blog/raw/master/Images/prototype5.png)
 
 顺便还要说一下，图中由相互关联的原型组成的链状结构就是原型链，也就是蓝色的这条线。
+```
+function Person() {
+}
+console.log(Person.__proto__ === Person.prototype); // false
+console.log(Person.__proto__.__proto__ === Person.prototype.__proto__); // true
+```
+因为Person._proto_ === Function.prototype,Function._proto_ === Object.prototype,而Person.prototype._proro_ === Object.prototype
+![完整原型图](https://pic3.zhimg.com/v2-729132ba66e171a1e23f84d387a73583_r.jpg)
 
 ## 补充
 
